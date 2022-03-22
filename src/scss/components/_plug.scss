@@ -233,10 +233,19 @@
 		opacity: 0;
 		visibility: hidden;
 
+		&-icon {
+			margin-left: vc(5);
+			width: vc(30);
+			height: vc(30);
+			cursor: pointer;
+		}
+
 		@include desktop {
 			left: vc(-32);
 			top: vc(66);
-			display: block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			padding: vc(26) 0 vc(16);
 			text-align: center;
 			background: url("../images/union.png")  no-repeat;
@@ -259,4 +268,11 @@
 	font-size: vc(14);
 	line-height: vc(24);
 	color: #02E7DF;
+}
+
+.js-copytextarea {
+	position: absolute;
+	top: 0;
+	z-index: -99999;
+	opacity: 0;
 }

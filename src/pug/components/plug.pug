@@ -21,8 +21,11 @@
 				.plug__social.plug__social--2.plug__social--phone
 					img(src="../images/phone.png" alt="phone")
 					| Phone
-				a.plug__popup(href="tel:+78997659842")
-					| +7 899 765 98 42
+				.plug__popup
+					a(href="tel:+78997659842")
+						| +7 899 765 98 42
+					.plug__popup-icon
+						+svg('copy')
 			.plug__phone.for-mobile
 				.plug__phone-icon
 					img.js-open(src="../images/phone.png" alt="phone")
@@ -31,5 +34,8 @@
 						img.js-close(src="../images/phone-close.png" alt="phone")
 					a.plug__phone-number(href="tel:+78997659842")
 						| +7 899 765 98 42
+
+textarea(class="js-copytextarea") +78997659842
+
 .footer
 	.footer__copyright 2022. All rights reserved

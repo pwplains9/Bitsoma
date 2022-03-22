@@ -35,7 +35,23 @@ function init() {
 				vars.$document.find('.plug__phone.for-mobile').removeClass('is-active');
 			}
 		});
+	} else {
+		let copyTextareaBtn = document.querySelector('.plug__popup-icon');
+
+		copyTextareaBtn.addEventListener('click', function(event) {
+			let copyTextarea = document.querySelector('.js-copytextarea');
+			copyTextarea.focus();
+			copyTextarea.select();
+
+			try {
+				let successful = document.execCommand('copy');
+				let msg = successful ? 'successful' : 'unsuccessful';
+			} catch (err) {
+			}
+		});
 	}
+
+
 }
 
 init();
