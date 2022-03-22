@@ -1,0 +1,262 @@
+.plug {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	overflow: hidden;
+
+	&__bg {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: vc(3);
+		margin-top: vc(8);
+		width: vc(1644.73);
+		height: vc(1699.45);
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+		margin: 0 auto;
+		width: vc(1000);
+		height: vc(632);
+	}
+
+	&__logo {
+		margin: 0 auto;
+		width: vc(1000);
+		height: vc(220);
+
+		@include mobile {
+			margin-top: vc(76);
+			width: vc(300);
+			height: vc(72);
+		}
+	}
+
+	&__text {
+		margin: vc(65) auto vc(43);
+		width: vc(720);
+		font-family: $font-ProximaNova;
+		font-weight: 800;
+		font-size: vc(56);
+		line-height: vc(64);
+		background: linear-gradient(180deg, #02E7DF 0%, #0074FE 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+		text-align: center;
+
+		@include mobile {
+			margin-top: vc(69);
+			margin-bottom: vc(34);
+			width: vc(300);
+			font-size: vc(36);
+			line-height: vc(42);
+		}
+	}
+
+	&__subtext {
+		margin-bottom: vc(80);
+		font-family: $font-ProximaNova;
+		font-weight: 600;
+		font-size: vc(24);
+		line-height: vc(32);
+		color: $color-white;
+		text-align: center;
+
+		@include mobile {
+			margin-bottom: vc(71);
+			font-size: vc(20);
+			line-height: vc(32);
+			letter-spacing: 1px;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include mobile {
+			justify-content: space-between;
+			margin: 0 auto;
+			overflow: hidden;
+			width: vc(232);
+		}
+	}
+
+	&__phone {
+		position: relative;
+
+		@include desktop {
+			&:hover {
+				.plug__popup {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		@include mobile {
+			width: vc(56);
+			height: vc(56);
+			background: rgba(255, 255, 255, 0.04);
+			border-radius: 12px;
+
+			&-content {
+				position: absolute;
+				right: vc(-232);
+				top: 0;
+				display: flex;
+				align-items: center;
+				//background: url("../images/phone-blure.png") center center no-repeat;
+				//background-size: contain;
+				background: rgba(255, 255, 255, 0.04);
+				backdrop-filter: blur(11px);
+				width: vc(232);
+				height: vc(56);
+				border-radius: 12px;
+				transition: all 0.5s linear;
+
+				.plug__phone-icon {
+					background: none;
+				}
+			}
+
+			&-icon {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: vc(56);
+				height: vc(56);
+
+				img {
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					width: vc(32);
+					height: vc(32);
+					transition: all 0.2s $easing-smooth;
+				}
+			}
+
+			&-number {
+				//opacity: 0;
+				margin-left: vc(16);
+				font-family: $font-ProximaNova;
+				font-weight: 600;
+				font-size: vc(16);
+				line-height: vc(24);
+			}
+
+			&.is-active {
+				img {
+
+				}
+
+				.plug__phone-content {
+					right: -2%;
+				}
+			}
+		}
+	}
+
+	&__social {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin: 0 vc(8);
+		border-radius: 12px;
+		padding: 0 vc(16);
+		width: vc(208);
+		height: vc(64);
+		font-family: $font-Poppins;
+		font-weight: 400;
+		font-size: vc(20);
+		line-height: vc(32);
+		letter-spacing: 0.16em;
+		background: rgba(255, 255, 255, 0.04);
+		cursor: pointer;
+
+		svg,
+		img {
+			width: vc(32);
+			height: vc(32);
+
+			@include desktop {
+				margin-right: vc(20);
+			}
+		}
+
+		&--phone {
+			@include desktop {
+				transition: all 0.5s linear;
+
+				&:hover {
+					background: rgba(8, 184, 68, 0.2);
+				}
+			}
+		}
+
+		&--2 {
+			width: vc(172);
+		}
+
+		@include mobile {
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+			width: vc(56);
+			height: vc(56);
+		}
+	}
+
+	&__popup {
+		position: absolute;
+		width: vc(244);
+		font-family: $font-ProximaNova;
+		font-weight: 600;
+		font-size: vc(24);
+		line-height: vc(32);
+		transition: all 0.5s linear;
+		opacity: 0;
+		visibility: hidden;
+
+		@include desktop {
+			left: vc(-32);
+			top: vc(66);
+			display: block;
+			padding: vc(26) 0 vc(16);
+			text-align: center;
+			background: url("../images/union.png")  no-repeat;
+			background-size: cover;
+		}
+	}
+}
+
+.footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: vc(24) 0;
+	font-family: $font-ProximaNova;
+	font-weight: 400;
+	font-size: vc(14);
+	line-height: vc(24);
+	color: #02E7DF;
+}

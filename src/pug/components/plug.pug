@@ -1,0 +1,35 @@
+.plug
+	.plug__bg
+		include ../../images/bg-logo.svg
+	.plug__container
+		.plug__logo(data-aos="fade-left" data-aos-delay="200")
+			include ../../images/client.svg
+		.plug__text(data-aos="fade-right" data-aos-delay="300")
+			| One-stop solution for your crypto and FIAT assets
+		.plug__subtext(data-aos="fade-right" data-aos-delay="400")
+			| Launch in Q4 2022
+		.plug__contacts(data-aos="fade-up" data-aos-delay="500")
+			a.plug__social.plug__social--1(href="")
+				+svg('tg')
+				.for-desktop
+					| Telegram
+			a.plug__social.plug__social--2(href="")
+				+svg('box')
+				.for-desktop
+					| E-mail
+			.plug__phone.for-desktop
+				.plug__social.plug__social--2.plug__social--phone
+					img(src="../images/phone.png" alt="phone")
+					| Phone
+				a.plug__popup(href="tel:+78997659842")
+					| +7 899 765 98 42
+			.plug__phone.for-mobile
+				.plug__phone-icon
+					img.js-open(src="../images/phone.png" alt="phone")
+				.plug__phone-content
+					.plug__phone-icon
+						img.js-close(src="../images/phone-close.png" alt="phone")
+					a.plug__phone-number(href="tel:+78997659842")
+						| +7 899 765 98 42
+.footer
+	.footer__copyright 2022. All rights reserved
